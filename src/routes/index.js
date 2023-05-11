@@ -6,10 +6,10 @@ const route = (app) => {
     app.use('/news', newsRouter);
 
     // call router home
-    app.use('/', siteRouter);
+    app.use('/', siteRouter)
 
     // call router search
     app.use('/search', siteRouter);
-}
+};
 
 module.exports = route;

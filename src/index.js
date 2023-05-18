@@ -2,6 +2,7 @@ const path = require('path');
 const express = require('express');
 const morgan = require('morgan');
 const handlebars = require('express-handlebars');
+const methodOverride = require('method-override')
 
 const app = express();
 const port = 3000;
@@ -27,12 +28,18 @@ app.use(
 );
 app.use(express.json());
 
+// use override method
+app.use(methodOverride('_method'));
+
 //Temple engine
 app.engine(
     'hbs',
     handlebars.engine({
         // config dot file name
         extname: '.hbs',
+        helpers: {
+            sum: (a, b) => a + b,
+        }
     }),
 );
 app.set('view engine', 'hbs');

@@ -11,6 +11,15 @@ router.get('/create', courseController.create);
 // submit form create
 router.post('/store', courseController.store);
 
+// edit
+router.get('/:id/edit', courseController.edit);
+
+// save
+router.put('/:id', courseController.update);
+
+// delete
+router.delete('/:id', courseController.delete);
+
 // slug
 router.get('/:slug', courseController.show);
 

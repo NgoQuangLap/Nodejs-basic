@@ -23,4 +23,10 @@ router.delete('/:id', courseController.delete);
 // slug
 router.get('/:slug', courseController.show);
 
+// update deleted
+router.patch('/:id/restore', courseController.restore);
+
+// delete force
+router.delete('/:id/force', courseController.forceDelete);
+
 module.exports = router;

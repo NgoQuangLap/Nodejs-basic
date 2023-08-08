@@ -11,6 +11,8 @@ router.get('/create', courseController.create);
 // submit form create
 router.post('/store', courseController.store);
 
+router.post('/handle-form-action', courseController.handleFormAction)
+
 // edit
 router.get('/:id/edit', courseController.edit);
 
